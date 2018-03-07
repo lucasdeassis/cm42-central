@@ -12,7 +12,7 @@ module BaseOperations
     end
 
     def create_activity
-      Array(model).each do |record|
+      Array(model).map do |record|
         Activity.create(
           project: fetch_project(record),
           user: current_user,
